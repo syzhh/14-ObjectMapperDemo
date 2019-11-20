@@ -5,3 +5,8 @@
 /EmitMapperDemo/bin
 /AutoMapperDemo/obj
 /EmitMapperDemo/obj
+.vs
+.git
+*/*.user
+*/obj
+*/bin
