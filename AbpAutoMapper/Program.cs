@@ -1,4 +1,5 @@
 ﻿using Abp.AutoMapper;
+using Abp.Dependency;
 using Abp.Modules;
 using AutoMapper;
 using System;
@@ -24,6 +25,16 @@ namespace AbpAutoMapper
             var mapper2 = new Mapper(config);
             OrderDto dto2 = mapper2.Map<OrderDto>(order);
 
+            //使用abp
+            using (var bootstrapper = Abp.AbpBootstrapper.Create<MyJobCoreModule>())            
+            {
+                bootstrapper.Initialize();
+
+                //TODO
+
+                Console.WriteLine("Press ENTER to stop application...");
+                Console.ReadLine();
+            }
         }
     }
 
